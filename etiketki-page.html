@@ -32,7 +32,309 @@
 .faq-item.is-open .faq-chevron { transform: rotate(180deg); }
 #seo-text.is-collapsed { max-height: 9.5rem; overflow: hidden; }
 #request-popup-root[hidden] { display: none !important; }
-
+.materials-section {
+  background: #040509;
+  padding: 64px 0;
+}
+@media (min-width: 640px) {
+  .materials-section { padding: 96px 0; }
+}
+.materials-guide {
+  display: grid;
+  gap: 1.15rem;
+}
+.materials-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #dafb30;
+  color: #11120e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.materials-title { margin: 0; }
+.materials-body {
+  position: relative;
+  min-width: 0;
+}
+.materials-gallery {
+  display: grid;
+  gap: 1.15rem;
+  min-width: 0;
+  transition: opacity .55s ease, filter .45s ease;
+}
+.materials-guide.is-compare .materials-gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  filter: blur(8px);
+  pointer-events: none;
+}
+.materials-visual {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  align-self: stretch;
+  aspect-ratio: 5 / 4;
+  border: 1px solid #dafb30;
+  border-radius: 18px;
+  background: #111318;
+}
+.materials-visual img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.materials-photo-icon {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #dafb30;
+  color: #11120e;
+}
+.materials-stage {
+  min-width: 0;
+}
+.materials-pane-table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  overflow: visible;
+  background: #040509;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  filter: blur(8px);
+  transition: opacity .55s ease, filter .45s ease, visibility 0s linear .55s;
+}
+.materials-guide.is-compare .materials-pane-table {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  filter: none;
+  transition: opacity .55s ease, filter .45s ease, visibility 0s;
+}
+.materials-cards {
+  display: grid;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+@media (min-width: 520px) {
+  .materials-cards { grid-template-columns: 1fr 1fr; }
+}
+.materials-card {
+  padding: 18px 16px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 16px;
+  background: #1c1f26;
+}
+.materials-card h3 {
+  margin: 10px 0 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.materials-card p {
+  margin: 8px 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .68);
+}
+.materials-card-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #dafb30;
+}
+.materials-card-icon svg {
+  width: 36px;
+  height: 36px;
+}
+.materials-table-wrap {
+  display: none;
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 14px;
+}
+.materials-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: left;
+}
+.materials-table th,
+.materials-table td {
+  padding: 12px 10px;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+.materials-table th {
+  background: #111318;
+  color: #dafb30;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  border-bottom: 1px solid rgba(218, 251, 48, .25);
+}
+.materials-table td {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, .78);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.materials-table td:first-child {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.materials-table tbody tr:last-child td { border-bottom: 0; }
+.materials-compare-cards {
+  display: grid;
+  gap: 12px;
+  margin-top: 1.25rem;
+}
+.compare-card {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 14px;
+  background: #1c1f26;
+}
+.compare-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.compare-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.compare-card p {
+  margin: 12px 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .78);
+}
+.compare-card p span {
+  display: block;
+  margin-bottom: 4px;
+  color: #dafb30;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.compare-note {
+  margin: 16px 0 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .55);
+}
+.materials-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-self: start;
+  gap: 12px 22px;
+}
+.materials-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  min-height: 48px;
+  padding: 12px 22px;
+  font-size: 15px;
+  text-decoration: none;
+}
+.materials-compare {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #dafb30;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+  cursor: pointer;
+  transition: color .25s ease;
+}
+.materials-compare:hover,
+.materials-guide.is-compare .materials-compare { color: #dafb30; }
+@media (min-width: 768px) {
+  .materials-table-wrap { display: block; }
+  .materials-compare-cards { display: none; }
+}
+@media (min-width: 1024px) {
+  .materials-guide {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    column-gap: 2.75rem;
+    row-gap: 0.85rem;
+    grid-template-areas:
+      "kicker ."
+      "title ."
+      "body body"
+      "actions actions";
+  }
+  .materials-kicker { grid-area: kicker; }
+  .materials-title { grid-area: title; margin-bottom: 8px; }
+  .materials-body { grid-area: body; }
+  .materials-actions { grid-area: actions; margin-top: 4px; }
+  .materials-gallery {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    gap: 2.75rem;
+    align-items: stretch;
+  }
+  .materials-visual {
+    aspect-ratio: auto;
+  }
+  .materials-table th,
+  .materials-table td {
+    padding: 16px 18px;
+  }
+  .materials-table td {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .materials-gallery,
+  .materials-pane-table {
+    transition: none;
+    filter: none;
+  }
+}
   </style>
 </head>
 <body>
@@ -468,80 +770,118 @@
     </div>
   </section>
 
-  <section class="bg-[#1c1f26] py-16 sm:py-24">
-    <div class="site-container grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-center">
-      <div class="overflow-hidden">
-        <img src="https://3000-ikps715k2itk8mshv44u6-021c60fe.us4.manus.computer/manus-storage/rpk-leon-materials-detail_1548dacb.jpg" alt="Печать этикеток на плёночной основе" class="aspect-[1.25/1] w-full object-cover" width="900" height="720">
+  <section id="materials" class="materials-section">
+    <div class="site-container materials-guide" id="materials-guide">
+      <p class="materials-kicker">Гид по материалам</p>
+      <h2 class="section-title materials-title">Какую основу выбрать для этикетки</h2>
+      <div class="materials-body" id="materials-body">
+      <div class="materials-gallery">
+      <div class="materials-visual">
+        <span class="materials-photo-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+        </span>
+        <img src="https://3000-ikps715k2itk8mshv44u6-021c60fe.us4.manus.computer/manus-storage/rpk-leon-materials-detail_1548dacb.jpg" alt="Образцы основ для печати этикеток" width="900" height="720">
       </div>
-      <div>
-        <h2 class="section-title">Какую основу выбрать для этикетки</h2>
-        <p class="section-copy mt-5">Материал влияет на внешний вид, стойкость и удобство нанесения. Окончательный выбор делается по поверхности упаковки, температуре, влаге, изгибу и способу использования.</p>
-        <div class="mt-7 hidden overflow-x-auto md:block">
-          <table class="w-full min-w-[640px] border-collapse text-left text-[13px]">
-            <thead>
-              <tr class="bg-[#37383c] text-[#dafb30]">
-                <th class="border border-white/15 p-3 font-semibold">Основа</th>
-                <th class="border border-white/15 p-3 font-semibold">Где использовать</th>
-                <th class="border border-white/15 p-3 font-semibold">Особенности</th>
-                <th class="border border-white/15 p-3 font-semibold">Что сообщить для выбора</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-white/15 p-3 font-semibold">Бумага</td>
-                <td class="border border-white/15 p-3 text-white/75">Коробки, банки, сухая упаковка</td>
-                <td class="border border-white/15 p-3 text-white/75">Матовая или глянцевая поверхность; экономичный вариант для стабильных условий</td>
-                <td class="border border-white/15 p-3 text-white/75">Будет ли влага, охлаждение или трение</td>
-              </tr>
-              <tr>
-                <td class="border border-white/15 p-3 font-semibold">Белая плёнка</td>
-                <td class="border border-white/15 p-3 text-white/75">Пластик, стекло, гибкая упаковка</td>
-                <td class="border border-white/15 p-3 text-white/75">Лучше подходит для влаги и изгиба; свойства зависят от конкретного материала и клея</td>
-                <td class="border border-white/15 p-3 text-white/75">Температура, состав поверхности, радиус изгиба</td>
-              </tr>
-              <tr>
-                <td class="border border-white/15 p-3 font-semibold">Прозрачная основа</td>
-                <td class="border border-white/15 p-3 text-white/75">Стекло и прозрачный пластик</td>
-                <td class="border border-white/15 p-3 text-white/75">Сохраняет вид упаковки; светлые элементы могут стать полупрозрачными</td>
-                <td class="border border-white/15 p-3 text-white/75">Цвет упаковки и необходимость белой подложки</td>
-              </tr>
-              <tr>
-                <td class="border border-white/15 p-3 font-semibold">Металлизированная основа</td>
-                <td class="border border-white/15 p-3 text-white/75">Акцентная и декоративная упаковка</td>
-                <td class="border border-white/15 p-3 text-white/75">Металлический эффект формируется материалом</td>
-                <td class="border border-white/15 p-3 text-white/75">Какие зоны должны сохранить блеск</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="materials-stage">
+        <div class="materials-pane materials-pane-cards">
+          <p class="section-copy">Основа определяет внешний вид, стойкость к среде и способ нанесения. Подберите материал под условия использования и задачи вашего продукта.</p>
+          <div class="materials-cards">
+            <article class="materials-card">
+              <span class="materials-card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="4" width="10" height="16" rx="5"/><path d="M7 8h10"/><circle cx="12" cy="8" r="2.2"/></svg></span>
+              <h3>Бумага</h3>
+              <p>Классическое решение для сухих условий. Отличная печать и натуральные тактильные ощущения.</p>
+            </article>
+            <article class="materials-card">
+              <span class="materials-card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 4v16M5 9h4M5 15h4"/></svg></span>
+              <h3>Белая плёнка</h3>
+              <p>Прочная и влагостойкая основа. Подходит для сложных условий эксплуатации.</p>
+            </article>
+            <article class="materials-card">
+              <span class="materials-card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2" stroke-dasharray="3.2 2.6"/></svg></span>
+              <h3>Прозрачная основа</h3>
+              <p>Эффект «no label look». Идеальна для премиального оформления упаковки.</p>
+            </article>
+            <article class="materials-card">
+              <span class="materials-card-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.35 6.15L20 11l-6.65 1.85L12 21l-1.35-8.15L4 11l6.65-1.85L12 3z"/></svg></span>
+              <h3>Металлизированная основа</h3>
+              <p>Премиальный металлический эффект для выразительных брендов.</p>
+            </article>
+          </div>
         </div>
-        <div class="mt-7 grid gap-3 md:hidden">
-          <article class="border border-white/15 bg-[#37383c] p-4">
-            <h3 class="font-bold text-[#dafb30]">Бумага</h3>
-            <p class="mt-2 text-sm text-white/75">Коробки, банки, сухая упаковка</p>
-            <p class="mt-2 font-['Roboto'] text-sm text-white/65">Матовая или глянцевая поверхность; экономичный вариант для стабильных условий</p>
-            <p class="mt-2 text-sm text-white/80">Для выбора: Будет ли влага, охлаждение или трение</p>
-          </article>
-          <article class="border border-white/15 bg-[#37383c] p-4">
-            <h3 class="font-bold text-[#dafb30]">Белая плёнка</h3>
-            <p class="mt-2 text-sm text-white/75">Пластик, стекло, гибкая упаковка</p>
-            <p class="mt-2 font-['Roboto'] text-sm text-white/65">Лучше подходит для влаги и изгиба; свойства зависят от конкретного материала и клея</p>
-            <p class="mt-2 text-sm text-white/80">Для выбора: Температура, состав поверхности, радиус изгиба</p>
-          </article>
-          <article class="border border-white/15 bg-[#37383c] p-4">
-            <h3 class="font-bold text-[#dafb30]">Прозрачная основа</h3>
-            <p class="mt-2 text-sm text-white/75">Стекло и прозрачный пластик</p>
-            <p class="mt-2 font-['Roboto'] text-sm text-white/65">Сохраняет вид упаковки; светлые элементы могут стать полупрозрачными</p>
-            <p class="mt-2 text-sm text-white/80">Для выбора: Цвет упаковки и необходимость белой подложки</p>
-          </article>
-          <article class="border border-white/15 bg-[#37383c] p-4">
-            <h3 class="font-bold text-[#dafb30]">Металлизированная основа</h3>
-            <p class="mt-2 text-sm text-white/75">Акцентная и декоративная упаковка</p>
-            <p class="mt-2 font-['Roboto'] text-sm text-white/65">Металлический эффект формируется материалом</p>
-            <p class="mt-2 text-sm text-white/80">Для выбора: Какие зоны должны сохранить блеск</p>
-          </article>
+      </div>
+      </div>
+        <div class="materials-pane materials-pane-table" id="materials-table">
+          <p class="section-copy">Материал влияет на внешний вид, стойкость и удобство нанесения. Окончательный выбор делается по поверхности упаковки, температуре, влаге, изгибу и способу использования.</p>
+          <div class="materials-table-wrap">
+            <table class="materials-table">
+              <thead>
+                <tr>
+                  <th>Основа</th>
+                  <th>Где использовать</th>
+                  <th>Особенности</th>
+                  <th>Что сообщить для выбора</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Бумага</td>
+                  <td>Коробки, банки, сухая упаковка</td>
+                  <td>Матовая или глянцевая поверхность; экономичный вариант для стабильных условий</td>
+                  <td>Будет ли влага, охлаждение или трение</td>
+                </tr>
+                <tr>
+                  <td>Белая плёнка</td>
+                  <td>Пластик, стекло, гибкая упаковка</td>
+                  <td>Лучше подходит для влаги и изгиба; свойства зависят от конкретного материала и клея</td>
+                  <td>Температура, состав поверхности, радиус изгиба</td>
+                </tr>
+                <tr>
+                  <td>Прозрачная основа</td>
+                  <td>Стекло и прозрачный пластик</td>
+                  <td>Сохраняет вид упаковки; светлые элементы могут стать полупрозрачными</td>
+                  <td>Цвет упаковки и необходимость белой подложки</td>
+                </tr>
+                <tr>
+                  <td>Металлизированная основа</td>
+                  <td>Акцентная и декоративная упаковка</td>
+                  <td>Металлический эффект формируется материалом</td>
+                  <td>Какие зоны должны сохранить блеск</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="materials-compare-cards">
+            <article class="compare-card">
+              <div class="compare-card-top"><h3>Бумага</h3></div>
+              <p><span>Где использовать</span>Коробки, банки, сухая упаковка</p>
+              <p><span>Особенности</span>Матовая или глянцевая поверхность; экономичный вариант для стабильных условий</p>
+              <p><span>Что сообщить</span>Будет ли влага, охлаждение или трение</p>
+            </article>
+            <article class="compare-card">
+              <div class="compare-card-top"><h3>Белая плёнка</h3></div>
+              <p><span>Где использовать</span>Пластик, стекло, гибкая упаковка</p>
+              <p><span>Особенности</span>Лучше подходит для влаги и изгиба; свойства зависят от конкретного материала и клея</p>
+              <p><span>Что сообщить</span>Температура, состав поверхности, радиус изгиба</p>
+            </article>
+            <article class="compare-card">
+              <div class="compare-card-top"><h3>Прозрачная основа</h3></div>
+              <p><span>Где использовать</span>Стекло и прозрачный пластик</p>
+              <p><span>Особенности</span>Сохраняет вид упаковки; светлые элементы могут стать полупрозрачными</p>
+              <p><span>Что сообщить</span>Цвет упаковки и необходимость белой подложки</p>
+            </article>
+            <article class="compare-card">
+              <div class="compare-card-top"><h3>Металлизированная основа</h3></div>
+              <p><span>Где использовать</span>Акцентная и декоративная упаковка</p>
+              <p><span>Особенности</span>Металлический эффект формируется материалом</p>
+              <p><span>Что сообщить</span>Какие зоны должны сохранить блеск</p>
+            </article>
+          </div>
+          <p class="compare-note">Основа — только часть решения. На результат также влияют клеевой слой, температура нанесения, хранение и контакт с влагой или составом продукта. Для нестандартных условий параметры нужно согласовать до запуска.</p>
         </div>
-        <p class="mt-5 font-['Roboto'] text-[14px] leading-relaxed text-white/65">Основа — только часть решения. На результат также влияют клеевой слой, температура нанесения, хранение и контакт с влагой или составом продукта. Для нестандартных условий параметры нужно согласовать до запуска.</p>
-        <a href="#configurator" class="action-btn mt-6 inline-flex min-h-11 items-center px-7 py-4 text-sm">Помочь выбрать материал</a>
+      </div>
+      <div class="materials-actions">
+        <a href="#configurator" class="action-btn materials-pick">Подобрать материал <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <button type="button" class="materials-compare" id="open-compare" aria-pressed="false">Сравнить все материалы</button>
       </div>
     </div>
   </section>
@@ -1005,6 +1345,8 @@
   const headerRoot = document.getElementById("site-header");
   const popup = document.getElementById("request-popup-root");
   const popupMessage = document.getElementById("popup-message");
+  const materialsGuide = document.getElementById("materials-guide");
+  const openCompareBtn = document.getElementById("open-compare");
   const sticky = document.getElementById("sticky-cta");
   const scrollTop = document.getElementById("scrollTopBtn");
 
@@ -1018,6 +1360,14 @@
     document.body.classList.remove("overflow");
   }
 
+  function toggleMaterialsCompare() {
+    if (!materialsGuide || !openCompareBtn) return;
+    const next = !materialsGuide.classList.contains("is-compare");
+    materialsGuide.classList.toggle("is-compare", next);
+    openCompareBtn.setAttribute("aria-pressed", next ? "true" : "false");
+    openCompareBtn.textContent = next ? "К карточкам основ" : "Сравнить все материалы";
+  }
+
   const popupClose = document.getElementById("popup-close");
   popupClose && popupClose.addEventListener("click", (event) => {
     event.preventDefault();
@@ -1027,6 +1377,7 @@
   popup && popup.addEventListener("click", (event) => {
     if (event.target === popup) closeRequest();
   });
+  openCompareBtn && openCompareBtn.addEventListener("click", toggleMaterialsCompare);
 
   document.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;
@@ -1066,6 +1417,10 @@
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      if (materialsGuide && materialsGuide.classList.contains("is-compare")) {
+        toggleMaterialsCompare();
+        return;
+      }
       closeRequest();
       headerRoot && headerRoot.classList.remove("is-mnu-open");
       document.body.classList.remove("overflow");
